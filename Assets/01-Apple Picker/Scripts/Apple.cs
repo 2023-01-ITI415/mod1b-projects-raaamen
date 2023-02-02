@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Apple : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other) {
+    private void OnCollisionEnter(Collision other) {
+        Debug.Log(other.gameObject.tag);
         switch (other.gameObject.tag)
         {
             case "Ground":
-                Destroy(gameObject);
+                GameManager.Instance.Lives--;
+                Destroy(this.gameObject);
+
             break;
         }
     }
+
+    
 }

@@ -28,6 +28,34 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance {get; private set;}
     public bool gameRunning;
+    public int _lives;
+    public int Lives{
+        get{
+            return _lives;
+        }
+        set{
+            _lives = value;
+            switch (_lives)
+            {
+                case 2:
+                    basket3.SetActive(false);
+                    break;
+                case 1:
+                    basket2.SetActive(false);
+                    break;
+                case 0:
+                    basket3.SetActive(true);
+                    basket2.SetActive(true);
+                    CurrentScore=0;
+                    UpdateScores();
+                    _lives = 3;
+                    break;
+
+            }
+        }
+    }
+    public GameObject basket2;
+    public GameObject basket3;
     // Start is called before the first frame update
     private void Awake() {
         if (Instance != null && Instance != this) 

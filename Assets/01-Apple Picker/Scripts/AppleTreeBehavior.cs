@@ -44,7 +44,6 @@ public class AppleTreeBehavior : MonoBehaviour
         {
             Debug.Log("change direction");
            tempPos*=-1;
-           Debug.Log(tempPos);
         }
 
     }
