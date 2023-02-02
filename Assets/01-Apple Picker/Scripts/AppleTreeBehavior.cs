@@ -21,6 +21,9 @@ public class AppleTreeBehavior : MonoBehaviour
         tempPos = Camera.main.WorldToViewportPoint(transform.position);
         moveVector = new Vector3(movementSpeed*Time.deltaTime, 0 ,0);
         transform.position += moveVector;
+        var pos = transform.position;
+        pos.x = Mathf.Clamp(transform.position.x, -33, 33);
+        transform.position=pos;
         if (tempPos.x >= 1.0){
             movementSpeed*=-1;
             
