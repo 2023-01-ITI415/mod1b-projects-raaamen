@@ -5,27 +5,31 @@ using UnityEngine;
 public class AppleTreeBehavior : MonoBehaviour
 {
     public GameObject applePrefab;
-
     public float appleTimerSeconds;
     public float movementSpeed;
     private Vector3 startPos;
+    public Vector3 moveVector;
     Vector3 tempPos;
-
     public float currentTime;
-    // Start is called before the first frame update
     void Start()
     {
         startPos = transform.position;
         StartCoroutine(DropApple());
+        
     }
-
-    // Update is called once per frame
     void Update()
     {
-        currentTime=Time.time;
-        tempPos = startPos + new Vector3(Mathf.Sin(currentTime)*movementSpeed,0,0);
-        //sin goes between 1 and -1 so this makes it move back and forth
-        transform.position = tempPos;
+        tempPos = Camera.main.WorldToViewportPoint(transform.position);
+        moveVector = new Vector3(movementSpeed*Time.deltaTime, 0 ,0);
+        transform.position += moveVector;
+        if (tempPos.x >= 1.0){
+            movementSpeed*=-1;
+            
+        } 
+        if (tempPos.x <= 0.0){
+            movementSpeed*=-1;
+        }
+
         Calculate();
     }
 
@@ -43,7 +47,7 @@ public class AppleTreeBehavior : MonoBehaviour
         if (randValue <= 0.1)
         {
             Debug.Log("change direction");
-           tempPos*=-1;
+            movementSpeed*=-1;
         }
 
     }

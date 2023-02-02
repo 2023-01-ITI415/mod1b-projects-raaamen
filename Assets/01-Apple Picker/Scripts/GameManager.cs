@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    
     public static GameManager Instance {get; private set;}
     public bool gameRunning;
     public int _lives;
@@ -48,7 +47,6 @@ public class GameManager : MonoBehaviour
                     UpdateScores();
                     _lives = 3;
                     break;
-
             }
         }
     }
