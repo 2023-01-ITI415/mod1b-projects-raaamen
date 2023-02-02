@@ -15,7 +15,6 @@ public class AppleTreeBehavior : MonoBehaviour
     {
         startPos = transform.position;
         StartCoroutine(DropApple());
-        
     }
     void Update()
     {
@@ -29,7 +28,6 @@ public class AppleTreeBehavior : MonoBehaviour
         if (tempPos.x <= 0.0){
             movementSpeed*=-1;
         }
-
         Calculate();
     }
 
@@ -46,7 +44,6 @@ public class AppleTreeBehavior : MonoBehaviour
         float randValue = Random.value;
         if (randValue <= 0.1)
         {
-            Debug.Log("change direction");
             movementSpeed*=-1;
         }
 
