@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     }   
     void Start()
     {
-        
+        UpdateScores();
     }
 
     // Update is called once per frame

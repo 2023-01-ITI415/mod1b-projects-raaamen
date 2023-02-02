@@ -9,20 +9,23 @@ public class AppleTreeBehavior : MonoBehaviour
     public float appleTimerSeconds;
     public float movementSpeed;
     private Vector3 startPos;
+    Vector3 tempPos;
 
     public float currentTime;
     // Start is called before the first frame update
     void Start()
     {
         startPos = transform.position;
+        StartCoroutine(DropApple());
     }
 
     // Update is called once per frame
     void Update()
     {
         currentTime=Time.time;
+        tempPos = startPos + new Vector3(Mathf.Sin(currentTime)*movementSpeed,0,0);
         //sin goes between 1 and -1 so this makes it move back and forth
-        transform.position = startPos + new Vector3(Mathf.Sin(currentTime)*movementSpeed,0,0);
+        transform.position = tempPos;
         Calculate();
     }
 
@@ -40,7 +43,8 @@ public class AppleTreeBehavior : MonoBehaviour
         if (randValue <= 0.1)
         {
             Debug.Log("change direction");
-           currentTime+=5;
+           tempPos*=-1;
+           Debug.Log(tempPos);
         }
 
     }

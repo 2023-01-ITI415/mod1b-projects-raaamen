@@ -27,6 +27,7 @@ public class Basket : MonoBehaviour
     private void OnCollisionEnter(Collision other) {
         //only collision will be apple in theory so no check is needed
         Destroy(other.gameObject);
-
+        GameManager.Instance.CurrentScore++;
+        GameManager.Instance.UpdateScores();
     }
 }
