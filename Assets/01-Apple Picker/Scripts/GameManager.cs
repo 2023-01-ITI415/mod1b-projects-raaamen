@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI highScoreText;
     public TextMeshProUGUI currentScoreText;
-
     private int _currentScore;
     public int highScore;
     public int CurrentScore{
@@ -25,7 +24,6 @@ public class GameManager : MonoBehaviour
         }
     }
     
-
     public static GameManager Instance {get; private set;}
     public bool gameRunning;
     public int _lives;
@@ -66,21 +64,12 @@ public class GameManager : MonoBehaviour
     { 
         Instance = this; 
     }
-
-    gameRunning = true;
-
+        gameRunning = true;
     }   
     void Start()
     {
         UpdateScores();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void UpdateScores(){
         currentScoreText.text = "Current score: "+CurrentScore;
         highScoreText.text = "High score: "+highScore;
