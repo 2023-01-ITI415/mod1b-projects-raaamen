@@ -1251,7 +1251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   applePrefab: {fileID: 1105760525757012, guid: bfec01bc3e4d0444dbe595b4f55c6730, type: 3}
-  appleTimerSeconds: 5
+  appleTimerSeconds: 0.8
   movementSpeed: 30
   moveVector: {x: 0, y: 0, z: 0}
   currentTime: 0
