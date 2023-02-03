@@ -22,15 +22,8 @@ public class AppleTreeBehavior : MonoBehaviour
         moveVector = new Vector3(movementSpeed*Time.deltaTime, 0 ,0);
         transform.position += moveVector;
         var pos = transform.position;
-        pos.x = Mathf.Clamp(transform.position.x, -33, 33);
+        pos.x = Mathf.Clamp(transform.position.x, -30, 28);
         transform.position=pos;
-        if (tempPos.x >= 1.0){
-            movementSpeed*=-1;
-            
-        } 
-        if (tempPos.x <= 0.0){
-            movementSpeed*=-1;
-        }
         Calculate();
     }
 
