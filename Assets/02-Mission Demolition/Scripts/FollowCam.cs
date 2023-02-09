@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class FollowCam : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    public static GameObject projectile;
+
+    private void Awake() {
         
+    }
+    
+
+    private void FixedUpdate() {
+        if (projectile=null) return;
+        Vector3.Lerp(transform.position, projectile.transform.position, Time
+        .deltaTime);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
