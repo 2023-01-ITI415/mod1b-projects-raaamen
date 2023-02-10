@@ -14,15 +14,30 @@ public class FollowCam : MonoBehaviour
     
 
     private void FixedUpdate() {
-        if (projectile=null) return;
+        Vector3 destination = Vector3.zero;
+        if (projectile!=null){
+            if(projectile.GetComponent<Rigidbody>().IsSleeping()){
+                projectile=null;
+            }
+        }
+        if (projectile!=null)
+        {
+            destination = projectile.transform.position;
+        }
+
+
+
+        
         
         Vector3 camDestination = projectile.transform.position;
 
-        
+        camDestination.x = Mathf.Max(minimum.x, camDestination.x);
+        camDestination.y = Mathf.Max(minimum.y, camDestination.y);
 
         camDestination = Vector3.Lerp(transform.position, camDestination, 0.05f); 
         camDestination.z = camZ;
         transform.position=camDestination;
+        Camera.main.orthographicSize = destination.y + 10;
     }
 
 }

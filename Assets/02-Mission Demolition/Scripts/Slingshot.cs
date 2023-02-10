@@ -42,6 +42,7 @@ public class Slingshot : MonoBehaviour
             rb.isKinematic=false;
             rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
             rb.velocity=-delta*velocityMultiply;
+
             currentProjectile=null;
         }
     }
