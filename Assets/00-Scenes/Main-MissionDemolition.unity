@@ -273,8 +273,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: acc5f0fd7462e4c4894ab0ad7ede1b6f, type: 3}
   cloud: {fileID: 4697576333840625074, guid: 5840072e936e8014399a1a35e67bed29, type: 3}
   numOfClouds: 0
-  cloudSpawn: 0
-  spawnPoint: {x: 10.97, y: 3.85, z: -5}
+  cloudSpawn: 2
+  spawnPoint: {x: 10.97, y: 3.8, z: -5}
 --- !u!1 &495991079
 GameObject:
   m_ObjectHideFlags: 0

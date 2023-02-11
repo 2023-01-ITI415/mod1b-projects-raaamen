@@ -11,11 +11,15 @@ public class CloudCover : MonoBehaviour
     Vector3 minPos;
     Vector3 maxPos;
     Vector2 scaleRange = new Vector2(1,4);
-    Vector2 spawnRange = new Vector2(0.5f, 1f);
+    Vector2 spawnRange = new Vector2(0.5f, 0.6f);
 
     public float cloudSpawn;
 
     public Vector3 spawnPoint;
+
+    private void Start() {
+        StartCoroutine("SpawnClouds");
+    }
 
     IEnumerator SpawnClouds(){
         while (true)
