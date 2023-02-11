@@ -12,6 +12,7 @@ public class FollowCam : MonoBehaviour
         camZ = transform.position.z;
     }
     private void FixedUpdate() {
+        Debug.Log(projectile.name);
         Vector3 destination = Vector3.zero;
         if (projectile!=null){
             if(projectile.GetComponent<Rigidbody>().IsSleeping()){
@@ -22,10 +23,6 @@ public class FollowCam : MonoBehaviour
         {
             destination = projectile.transform.position;
         }
-
-
-
-        
         
         Vector3 camDestination = projectile.transform.position;
 

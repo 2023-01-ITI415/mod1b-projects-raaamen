@@ -60,6 +60,7 @@ public class Slingshot : MonoBehaviour
     private void OnMouseDown() {
         currentProjectile = Instantiate(projectilePrefab, haloObj.transform.position, Quaternion.identity);
         FollowCam.projectile = currentProjectile;
+        Debug.Log(FollowCam.projectile.name);
         currentProjectile.GetComponent<Rigidbody>().isKinematic=true;
         isAiming=true;
     }
