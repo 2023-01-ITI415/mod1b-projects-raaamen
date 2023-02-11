@@ -5,7 +5,8 @@ using UnityEngine;
 public class CloudCover : MonoBehaviour
 {
 
-    public List<GameObject> cloudList;
+    public List<Sprite> cloudList;
+    public GameObject cloud;
     public int numOfClouds;
     Vector3 minPos;
     Vector3 maxPos;
@@ -22,7 +23,8 @@ public class CloudCover : MonoBehaviour
             yield return new WaitForSeconds(cloudSpawn);
             spawnPoint.x += Random.Range(-spawnRange.x, spawnRange.y);
             spawnPoint.y += Random.Range(-spawnRange.x, spawnRange.y);
-            var cloudSpawned = Instantiate(cloudList[Random.Range(0, cloudList.Count)], spawnPoint, Quaternion.identity);
+            var cloudSpawned = Instantiate(cloud, spawnPoint, Quaternion.identity);
+            cloudSpawned.GetComponent<SpriteRenderer>().sprite = cloudList[Random.Range(0, cloudList.Count)];
         }
     }
 }

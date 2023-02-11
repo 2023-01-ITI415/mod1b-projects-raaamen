@@ -11,8 +11,6 @@ public class FollowCam : MonoBehaviour
     private void Awake() {
         camZ = transform.position.z;
     }
-    
-
     private void FixedUpdate() {
         Vector3 destination = Vector3.zero;
         if (projectile!=null){
