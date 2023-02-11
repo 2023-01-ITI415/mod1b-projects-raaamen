@@ -7,6 +7,7 @@ public class Slingshot : MonoBehaviour
     public GameObject haloObj;
     public GameObject projectilePrefab;
     public GameObject currentProjectile;
+    public GameObject projLinePrefab;
 
     public bool isAiming;
 
@@ -44,7 +45,7 @@ public class Slingshot : MonoBehaviour
             rb.isKinematic=false;
             rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
             rb.velocity=-delta*velocityMultiply;
-
+            Instantiate<GameObject>(projLinePrefab, currentProjectile.transform);
             currentProjectile=null;
         }
     }

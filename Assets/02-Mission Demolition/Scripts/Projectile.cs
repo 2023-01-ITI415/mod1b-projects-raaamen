@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
     private Vector3 prevpos;
     private List<float> deltas = new List<float>();
     private Rigidbody rb;
-    private bool awake;
+    public bool awake;
     // Start is called before the first frame update
     void Start()
     {
