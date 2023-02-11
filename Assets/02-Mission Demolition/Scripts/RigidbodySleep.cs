@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class RigidbodySleep : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private int sleepCountdown = 4;
+    private Rigidbody rb;
+    private void Awake() {
+        rb = GetComponent<Rigidbody>();
+    }
+    private void FixedUpdate() {
+        if (sleepCountdown>0)
+        {
+            rb.Sleep();
+            sleepCountdown--;
+        }
     }
 }

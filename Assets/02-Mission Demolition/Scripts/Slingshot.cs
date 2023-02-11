@@ -9,13 +9,15 @@ public class Slingshot : MonoBehaviour
     public GameObject currentProjectile;
 
     public bool isAiming;
+
+    public GameObject launchPoint;
     
     public Vector3 launchPos;
 
     public float velocityMultiply;
 
     private void Awake() {
-        launchPos = GameObject.Find("LaunchPoint").gameObject.transform.position;
+        launchPos = launchPoint.transform.position;
     }
 
     private void Update() {
