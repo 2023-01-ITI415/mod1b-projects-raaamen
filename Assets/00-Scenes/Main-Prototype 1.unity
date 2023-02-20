@@ -1025,7 +1025,7 @@ GameObject:
   - component: {fileID: 1817792278}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1126,12 +1126,14 @@ MonoBehaviour:
   camera: {fileID: 792234107}
   movementSpeed: 5
   characterController: {fileID: 0}
-  shootCooldown: 0
-  canShoot: 0
-  jumpForce: {x: 0, y: 0, z: 0}
+  shootCooldown: 1
+  canShoot: 1
+  jumpForce: {x: 0, y: 200, z: 0}
   bulletForce: {x: 0, y: 0, z: 0}
-  rb: {fileID: 0}
+  bulletForceMultiplier: 0
+  rb: {fileID: 1817792278}
   bulletPrefab: {fileID: 4312335060300482646, guid: b67f94db522fb9d4395528c1be990dff, type: 3}
+  playerGun: {fileID: 1939129100}
 --- !u!54 &1817792278
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1148,6 +1150,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!1 &1939129100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8048859450012617638, guid: 4e2eb1b4723dc7d49be4e6b3483cb53e, type: 3}
+  m_PrefabInstance: {fileID: 135141123}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2016318559
 GameObject:
   m_ObjectHideFlags: 0

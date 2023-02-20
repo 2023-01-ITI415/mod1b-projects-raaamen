@@ -23,6 +23,11 @@ public class PrototypeManager : MonoBehaviour
 
     IEnumerator SpawnEnemy(){
         yield return new WaitForSeconds(enemySpawnTimer);
-        Instantiate(enemyPrefab, enemySpawnPositions[Random.Range(0, enemySpawnPositions.Count)].position, Quaternion.identity);
+        Vector3 spawnPos = new Vector3(
+            enemySpawnPositions[Random.Range(0, enemySpawnPositions.Count)].position.x,
+            5,
+            enemySpawnPositions[Random.Range(0, enemySpawnPositions.Count)].position.z 
+            );
+        Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
     }
 }

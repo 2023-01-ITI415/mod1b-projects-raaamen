@@ -12,9 +12,11 @@ public class PlayerMovement : MonoBehaviour
     public bool canShoot;
     public Vector3 jumpForce;
     public Vector3 bulletForce;
+    public float bulletForceMultiplier;
     public Rigidbody rb;
 
     public GameObject bulletPrefab;
+    public GameObject playerGun;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +40,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetMouseButton(0) && canShoot)
         {
-            var bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+            bulletForce = Vector3.forward*bulletForceMultiplier;
+            var bullet = Instantiate(bulletPrefab, playerGun.transform.position, transform.rotation);
             bullet.GetComponent<Rigidbody>().AddForce(bulletForce);
             
             
