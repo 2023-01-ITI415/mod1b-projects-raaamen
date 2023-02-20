@@ -22,6 +22,7 @@ public class PseudoVolumetricExplosion : MonoBehaviour {
 		}
 		endScale = transform.localScale;
 		startTime = Time.time;
+		StartCoroutine("DeleteSelf");
 	}
 
 	void Update () {
@@ -44,5 +45,9 @@ public class PseudoVolumetricExplosion : MonoBehaviour {
 		float clipVal = clip.Evaluate(timeFromBegin / timeScale);
 		GetComponent<Renderer>().material.SetVector("_Range", new Vector4(beginRange, endRange, 0, 0));
 		GetComponent<Renderer>().material.SetFloat("_ClipRange", clipVal);
+	}
+	IEnumerator DeleteSelf(){
+		yield return new WaitForSeconds(3);
+		Destroy(this.gameObject);
 	}
 }

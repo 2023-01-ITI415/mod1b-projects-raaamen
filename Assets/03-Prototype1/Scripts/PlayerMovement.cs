@@ -40,12 +40,17 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetMouseButton(0) && canShoot)
         {
-            bulletForce = Vector3.forward*bulletForceMultiplier;
-            var bullet = Instantiate(bulletPrefab, playerGun.transform.position, transform.rotation);
+            canShoot=false;
+            StartCoroutine("ShootCooldown");
+            bulletForce = camera.transform.forward*bulletForceMultiplier;
+            var bullet = Instantiate(bulletPrefab, playerGun.transform.position, camera.transform.rotation);
             bullet.GetComponent<Rigidbody>().AddForce(bulletForce);
-            
-            
         }
+    }
+
+    public IEnumerator ShootCooldown(){
+        yield return new WaitForSeconds(shootCooldown);
+        canShoot=true;
     }
 
 

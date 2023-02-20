@@ -190,6 +190,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun(AxisCorrection)
       objectReference: {fileID: 0}
+    - target: {fileID: 8048859450012617638, guid: 4e2eb1b4723dc7d49be4e6b3483cb53e, type: 3}
+      propertyPath: m_TagString
+      value: Gun
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5729096474873602668, guid: 4e2eb1b4723dc7d49be4e6b3483cb53e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4e2eb1b4723dc7d49be4e6b3483cb53e, type: 3}
@@ -765,7 +769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1817792271}
-  sensitivity: 100
+  sensitivity: 200
   xRot: 0
 --- !u!1 &1538671823
 GameObject:
@@ -1126,11 +1130,11 @@ MonoBehaviour:
   camera: {fileID: 792234107}
   movementSpeed: 5
   characterController: {fileID: 0}
-  shootCooldown: 1
+  shootCooldown: 0.25
   canShoot: 1
   jumpForce: {x: 0, y: 200, z: 0}
   bulletForce: {x: 0, y: 0, z: 0}
-  bulletForceMultiplier: 0
+  bulletForceMultiplier: 1000
   rb: {fileID: 1817792278}
   bulletPrefab: {fileID: 4312335060300482646, guid: b67f94db522fb9d4395528c1be990dff, type: 3}
   playerGun: {fileID: 1939129100}
