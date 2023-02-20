@@ -7,18 +7,20 @@ public class FPSCamera : MonoBehaviour
     public GameObject player;
     public float sensitivity;
     public float xRot;
-    // Start is called before the first frame update
+    
+    private void Awake() {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+    
     void Start()
     {
         player = GameObject.Find("Player");   
     }
 
-    // Update is called once per frame
     void Update()
     {
         MouseLook();
         transform.position = player.transform.position+new Vector3(0,0.5f,0);
-        
     }
 
     void MouseLook(){
