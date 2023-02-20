@@ -1,19 +1,20 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RigidbodySleep : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        Rigidbody rb = GetComponent<Rigidbody>();
-        if (rb != null) rb.Sleep();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private int sleepCountdown = 4;
+    private Rigidbody rb;
+    private void Awake() {
+        rb = GetComponent<Rigidbody>();
+    }
+    private void FixedUpdate() {
+        if (sleepCountdown>0)
+        {
+            rb.Sleep();
+            sleepCountdown--;
+        }
     }
 }
