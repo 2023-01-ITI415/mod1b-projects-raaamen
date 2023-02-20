@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
             var bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
             bullet.GetComponent<Rigidbody>().AddForce(bulletForce);
             
+            
         }
     }
 
