@@ -7,6 +7,7 @@ public class EnemyScript : MonoBehaviour
 {
 
     NavMeshAgent agent;
+    public Transform player;
 
     public enum State{
         Attacking,
@@ -16,6 +17,8 @@ public class EnemyScript : MonoBehaviour
 
     private void Awake() {
         agent = GetComponent<NavMeshAgent>();
+        player = GameObject.Find("Player").transform;
+        
     }
     void Start()
     {
@@ -25,8 +28,16 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        agent.destination = player.position;
     }
+
+    private void OnCollisionEnter(Collision other) {
+        if (other.gameObject.tag=="Bullet")
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
 
 
 }
