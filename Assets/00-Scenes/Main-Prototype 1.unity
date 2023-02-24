@@ -521,11 +521,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &783349574 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2832064421244777234, guid: 3094de81ddcf81f47aeb6751fa6476cd, type: 3}
-  m_PrefabInstance: {fileID: 8131046338913500976}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &792234105
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +942,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 3172314498449107368, guid: 3094de81ddcf81f47aeb6751fa6476cd, type: 3}
   enemySpawnTimer: 1
   enemySpawnPositions:
-  - {fileID: 783349574}
+  - {fileID: 2140440985}
   - {fileID: 265098311}
   - {fileID: 2122733058}
   - {fileID: 647745354}
@@ -1561,6 +1556,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2140440985 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5073172540331367902, guid: 33d0a71774f50424d961a39f126cde17, type: 3}
+  m_PrefabInstance: {fileID: 6087004199065160316}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6087004199065160316
 PrefabInstance:
   m_ObjectHideFlags: 0

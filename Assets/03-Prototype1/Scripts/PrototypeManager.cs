@@ -31,6 +31,7 @@ public class PrototypeManager : MonoBehaviour
             enemySpawnPositions[Random.Range(0, enemySpawnPositions.Count)].position.z 
             );
             Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+            Debug.Log("slime spawned");
         }
         
     }
